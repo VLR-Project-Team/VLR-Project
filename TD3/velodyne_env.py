@@ -95,7 +95,7 @@ class GazeboEnv:
             )
         self.gaps[-1][-1] += 0.03
 
-        port = "11311"
+        port = "11411"
         subprocess.Popen(["roscore", "-p", port])
 
         print("Roscore launched!")

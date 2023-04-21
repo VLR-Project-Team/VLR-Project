@@ -11,6 +11,7 @@ from torch.utils.tensorboard import SummaryWriter
 from replay_buffer import ReplayBuffer
 from velodyne_env import GazeboEnv
 
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
 def evaluate(network, epoch, eval_episodes=10):
     avg_reward = 0.0
@@ -269,6 +270,8 @@ if load_model:
             "Could not load the stored model parameters, initializing training with random parameters"
         )
 
+print("Model loaded!")
+
 # Create evaluation data store
 evaluations = []
 
@@ -283,6 +286,7 @@ random_action = []
 
 # Begin the training loop
 while timestep < max_timesteps:
+    print("Timestep:", timestep)
 
     # On termination of episode
     if done:

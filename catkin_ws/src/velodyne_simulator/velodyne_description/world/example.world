@@ -1,5 +1,11 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
+  <physics type='ode'>
+    <max_step_size>0.01000</max_step_size>
+    <real_time_factor>10.000000</real_time_factor>
+    <real_time_update_rate>1000.000000</real_time_update_rate>
+    <gravity>0.000000 0.000000 -9.800000</gravity>
+  </physics>
   <world name="default">
     <!-- A global light source -->
     <include>
