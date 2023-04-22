@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/jashshah999/vlr_project/VLR-Project/catkin_ws/devel_isolated/velodyne_description/setup.sh
