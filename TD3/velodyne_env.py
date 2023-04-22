@@ -101,6 +101,7 @@ class GazeboEnv:
         print("Roscore launched!")
 
         # Launch the simulation with the given launchfile name
+        print("Starting environment: " + launchfile)
         rospy.init_node("gym", anonymous=True)
         if launchfile.startswith("/"):
             fullpath = launchfile
@@ -109,6 +110,7 @@ class GazeboEnv:
         if not path.exists(fullpath):
             raise IOError("File " + fullpath + " does not exist")
 
+        print("Calling subprocess with command: ", ["roslaunch", "-p", port, fullpath])
         subprocess.Popen(["roslaunch", "-p", port, fullpath])
         print("Gazebo launched!")
 
